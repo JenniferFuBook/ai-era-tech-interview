@@ -7,6 +7,7 @@
  * Replace <ExampleName> with the desired example name.
  * @author Jennifer Fu
  */
+import { lazy, Suspense } from 'react';
 import BlogPostApp from './use-cases/BlogPostApp';
 import BlogPostExample from './use-cases/BlogPostExample';
 import ContextApiExample from './use-cases/ContextApiExample';
@@ -19,7 +20,6 @@ import FormSimple from './components/form/FormSimple';
 import GenericConstraintsExample from './use-cases/GenericConstraintsExample';
 import GenericListExample from './use-cases/GenericListExample';
 import LRUDemo from './use-cases/LRUDemo';
-import MantineThemeExample from './use-cases/MantineThemeExample';
 import ModularRouteApp from './use-cases/ModularRouteApp';
 import NestedRoutesExample from './use-cases/NestedRoutesExample';
 import PropDrillingExample from './use-cases/PropDrillingExample';
@@ -31,6 +31,10 @@ import StarRatingExample from './use-cases/StarRatingExample';
 import Timer from './use-cases/Timer';
 import TooltipExample from './use-cases/TooltipExample';
 import WeatherForecastApp from './use-cases/WeatherForecastApp';
+
+// Load the Mantine example on demand: its module imports Mantine's global
+// stylesheet, which would otherwise restyle every other example.
+const MantineThemeExample = lazy(() => import('./use-cases/MantineThemeExample'));
 
 function App() {
   const exampleName = import.meta.env.VITE_NAME || 'BlogPostExample';
@@ -66,7 +70,11 @@ function App() {
       {/* Chapter 7 examples — React in production: ecosystem and toolchain */}
       {exampleName === 'BlogPostApp' && <BlogPostApp />}
       {exampleName === 'FaviconExample' && <FaviconExample />}
-      {exampleName === 'MantineThemeExample' && <MantineThemeExample />}
+      {exampleName === 'MantineThemeExample' && (
+        <Suspense fallback={null}>
+          <MantineThemeExample />
+        </Suspense>
+      )}
       {exampleName === 'ModularRouteApp' && <ModularRouteApp />}
       {exampleName === 'NestedRoutesExample' && <NestedRoutesExample />}
       {exampleName === 'ProtectedRouteExample' && <ProtectedRouteExample />}

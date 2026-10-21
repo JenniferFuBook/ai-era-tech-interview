@@ -1,4 +1,6 @@
-body {
+/* `html body` outranks Mantine's `body` reset, which loads later with the lazy
+   MantineThemeExample, so every example keeps the same margin. */
+html body {
   /* Follow Mantine's theme background when a MantineProvider is mounted
      (the var flips with the color scheme); fall back to white otherwise. */
   background: var(--mantine-color-body, white);
