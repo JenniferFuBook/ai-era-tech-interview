@@ -12,33 +12,13 @@ const Form = () => {
       const name = formData.get('name') as string;
       // Extract email from formData
       const email = formData.get('email') as string;
-      // Validate name with custom validation function
-      // This function checks if the name is valid (e.g., only letters and spaces)
-      const nameError = validateName(name);
-      // If name validation fails, return error with fields
-      if (nameError) {
-        return {
-          data: null,
-          error: nameError,
-          fields: {
-            name,
-            email,
-          },
-        };
-      }
-      // Validate email with custom validation function
-      // This function checks if the email is valid (e.g., proper email format)
-      const emailError = validateEmail(email);
-      // If email validation fails, return error with fields
-      if (emailError) {
-        return {
-          data: null,
-          error: emailError,
-          fields: {
-            name,
-            email,
-          },
-        };
+      // Capture the submitted values once, so every return path can carry them
+      const fields = { name, email };
+      // Validate name, then email; each helper returns an error message or null
+      const error = validateName(name) ?? validateEmail(email);
+      // If validation fails, return the error with fields preserved
+      if (error) {
+        return { data: null, error, fields };
       }
       try {
         // POST request to submit form data
@@ -55,10 +35,7 @@ const Form = () => {
         return {
           data, // Set the returned data
           error: null, // No error
-          fields: { // define fields with submitted values
-            name,
-            email,
-          },
+          fields, // Keep the submitted values
         };
       } catch (error) {
         // Handle any errors
@@ -67,11 +44,8 @@ const Form = () => {
           data: null,
           // Set error message
           error: `There was a problem with your submission: ${error}`,
-          // define fields with submitted values
-          fields: {
-            name,
-            email,
-          },
+          // Keep the submitted values
+          fields,
         };
       }
     },
