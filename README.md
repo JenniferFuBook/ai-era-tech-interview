@@ -1,6 +1,12 @@
 # AI-Era Tech Interview Examples
 
-This repository supports the book Acing the Frontend Interview with runnable React and Node.js examples for engineers in any stack. The examples cover what interviewers probe beneath AI-generated code: semantic HTML and accessibility, CSS, forms, browser APIs, JavaScript and TypeScript, React, system design, and distributed systems.
+This repository is the companion code for the book Acing the Frontend Interview. It is written for any engineer whose interview loop now includes reviewing or extending AI-generated code, whether the role is frontend, full-stack, or backend.
+
+Each example is small and runnable (React, TypeScript, and Node.js) and isolates one fundamental that interviewers probe:
+* How the browser treats markup, styles, forms, and its builtin APIs
+* How JavaScript and TypeScript behave at runtime
+* How React renders, manages state, and handles failure
+* How systems are designed and scaled, from one component to many services
 
 ## Requirements
 * Node.js: v22.22 or higher
