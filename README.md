@@ -1,6 +1,6 @@
-# React Interview Examples
+# AI-Era Tech Interview Examples
 
-This repository supports the book Acing the Frontend Interview, offering hands-on coding examples to reinforce the key concepts covered. These examples are designed to help readers prepare effectively for frontend development interviews through practical implementation.
+This repository supports the book Acing the Frontend Interview with runnable React and Node.js examples for engineers in any stack. The examples cover what interviewers probe beneath AI-generated code: semantic HTML and accessibility, CSS, forms, browser APIs, JavaScript and TypeScript, React, system design, and distributed systems.
 
 ## Requirements
 * Node.js: v22.22 or higher
@@ -9,8 +9,8 @@ This repository supports the book Acing the Frontend Interview, offering hands-o
 ## Getting started
 1. Clone the repository
 ```
-git clone https://github.com/JenniferFuBook/frontend-interview
-cd frontend-interview
+git clone https://github.com/JenniferFuBook/ai-era-tech-interview
+cd ai-era-tech-interview
 ```
 
 2. Install dependencies
@@ -24,7 +24,7 @@ npm run dev
 ```
 You should see output like:
 ```
-> frontend-interview@1.0.0 dev
+> ai-era-tech-interview@1.0.0 dev
 > vite
   VITE v8.1.3  ready in 207 ms
   ➜  Local:   http://localhost:5173/
@@ -33,7 +33,7 @@ You should see output like:
 ```
 Open a browser and go to `http://localhost:5173` to view the following “My Favorite Article” page:
 
-![alt text](https://github.com/JenniferFuBook/frontend-interview/blob/main/public/my-favorite-article.png?raw=true)
+![alt text](https://github.com/JenniferFuBook/ai-era-tech-interview/blob/main/public/my-favorite-article.png?raw=true)
 
 ## Running examples
 By default, the app runs the `BlogPostExample`.
@@ -110,7 +110,7 @@ The working tree must be clean. The command checks out each branch, runs the fou
 ## Project structure
 The repository is set up as a [Vite](https://vite.dev) TypeScript project. Vite is a modern build tool and development server that offers lightning-fast startup and hot module replacement for web projects. It is designed to provide an extremely fast and efficient development experience by leveraging native ES modules and smart caching. The directory and code structure are organized as follows:
 ```
-frontend-interview/                   # Root of the project
+ai-era-tech-interview/             # Root of the project
   ├── public/                      # Static assets (images, fonts, etc.)
   ├── src/                         # Application source code
   |     ├── algorithms/            # Common algorithm implementations
