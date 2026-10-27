@@ -1,6 +1,5 @@
-// Function declarations hoist with their body; function expressions do not.
-greet(); // OK — the declaration is hoisted with its body.
-// sayHello(); // ReferenceError — `sayHello` is in the temporal dead zone.
+greet(); // Execute successfully — the function declaration is fully hoisted.
+sayHello(); // Throw ReferenceError — `sayHello` is in the TDZ.
 
 function greet() {
   console.log('hi');
@@ -9,4 +8,3 @@ function greet() {
 const sayHello = function () {
   console.log('hello');
 };
-sayHello();
