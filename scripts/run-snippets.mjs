@@ -30,6 +30,7 @@ const SYNTAX_ONLY = new Set([
   'ch05/closureWithMemoryLeak.js',
   'ch05/closureWithMemoryClearing.js',
   'ch05/hoistingExample.js',
+  'ch05/functionHoisting.js',
 ]);
 
 // Call a public API (jsonplaceholder.typicode.com): run them, but a failure is
