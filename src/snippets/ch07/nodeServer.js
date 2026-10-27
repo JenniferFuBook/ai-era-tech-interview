@@ -1,7 +1,7 @@
-/** 
+/**
  * A simple Node.js server using Express to serve data from a local JSON file.
- * Run command: node –-watch src/snippets/ch07/nodeServer.js
- * Uncomment the CORS section to try listing 6.1
+ * Run command: node --watch src/snippets/ch07/nodeServer.js
+ * Uncomment the CORS section to serve a frontend on another origin.
  */
 import express from 'express';
 import { readFile } from 'fs/promises';
@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 3000;
 
-// Uncomment it to try listing 6.1
+// Uncomment it to serve a frontend on another origin
 // // Add CORS headers and handle OPTIONS requests globally, before route definitions
 // app.use((req, res, next) => {
 //   // Specify the allowed origin
